@@ -1,0 +1,5 @@
+dalvik/vm/mterp/out/InterpC-portable.cpp:3751: error: undefined reference to 'dvmDumpRegs(Method const*, unsigned int const*, bool)'
+dalvik/vm/mterp/out/InterpC-portable.cpp:3943: error: undefined reference to 'dvmDumpRegs(Method const*, unsigned int const*, bool)'
+dalvik/vm/mterp/out/InterpC-portable.cpp:3951: error: undefined reference to 'dvmDumpRegs(Method const*, unsigned int const*, bool)'
+collect2: error: ld returned 1 exit status
+make: *** [out/target/product/generic/obj/SHARED_LIBRARIES/libdvmaz_intermediates/LINKED/libdvmaz.so] Error 1
