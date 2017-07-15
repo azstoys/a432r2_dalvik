@@ -18,6 +18,10 @@
  * Dalvik initialization, shutdown, and command-line argument processing.
  */
 #define __STDC_LIMIT_MACROS
+// Added By WZ
+#include <utils/CallStack.h>
+#include <cutils/properties.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <signal.h>
@@ -1379,6 +1383,17 @@ private:
 std::string dvmStartup(int argc, const char* const argv[],
         bool ignoreUnrecognized, JNIEnv* pEnv)
 {
+ 
+#ifndef ARCH_IA32
+    char propBuf[PROPERTY_VALUE_MAX];
+    property_get("dvmbtrace.Init.dvmStartup", propBuf, "");
+    if (strcmp(propBuf, "true") == 0) {
+        android::CallStack stack;
+        stack.update();
+        stack.dump("azstoys@gmail.com", "DEAZ");
+    }
+#endif
+
     ScopedShutdown scopedShutdown;
 
     assert(gDvm.initializing);
