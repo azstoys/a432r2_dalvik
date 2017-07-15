@@ -28,7 +28,8 @@ LOCAL_SHARED_LIBRARIES += \
 	liblog \
 	libnativehelper \
 	libselinux \
-	libz
+	libz \
+	libutils
 
 LOCAL_STATIC_LIBRARIES += libdex
 
